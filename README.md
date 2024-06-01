@@ -1,6 +1,6 @@
 # UMARV-CV-LaneDetection
 
-Repository for UMARV Computer Vision for the purpose of solving lane detection.
+A research and development platform for the University of Michigan's Autonomous Robotic Vehicle (UMARV) Computer Vision team to solve the understanding of a road scene
 
 ## Models vs Algorithms
 
