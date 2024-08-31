@@ -1,3 +1,3 @@
-# UMARV-CV-LaneDetection
+# UMARV-CV-ScenePerception
 
 ...

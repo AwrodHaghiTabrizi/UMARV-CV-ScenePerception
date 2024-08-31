@@ -32,7 +32,7 @@ def main():
         print("Error opening video file.")
         return
     fps = cap.get(cv2.CAP_PROP_FPS)
-    frame_rate = 10
+    frame_rate = 1
     frame_step = int(round(fps/frame_rate))
 
     frame_index = 0
@@ -50,6 +50,7 @@ def main():
 
     cap.release()
 
+    print(f"Finished extracting {data_index-2} frames from video at {frame_rate} fps.")
 
 if __name__ == "__main__":
     main()

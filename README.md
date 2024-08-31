@@ -1,4 +1,4 @@
-# UMARV-CV-LaneDetection
+# UMARV-CV-ScenePerception
 
 A research and development platform for the University of Michigan's Autonomous Robotic Vehicle (UMARV) Computer Vision team to solve the understanding of a road scene
 
@@ -15,23 +15,23 @@ The src/scripts folder hosts our scripts which provide varrying functionalities 
 1. Make sure you have git installed on your computer, guide [here](https://git-scm.com/downloads)
 2. Get access to the GitHub repository from a team lead
 3. Accept the invitation to the GitHub repository
-4. Go to https://github.com/AwrodHaghiTabrizi/UMARV-CV-LaneDetection/branches
+4. Go to https://github.com/AwrodHaghiTabrizi/UMARV-CV-ScenePerception/branches
 5. Click "New Branch"
 6. Branch name : "users/{your_initials}"
 7. Source : main
 8. Click "Create Branch"
 9. On your PC, create a UMARV folder <br>
 ├── UMARV/ <br>
-10. Create a Lane Detection folder <br>
+10. Create a Scene Perception folder <br>
 ├── UMARV/ <br>
-│ ├── LaneDetection/ <br>
-11. Right click into the LaneDetection folder
+│ ├── ScenePerception/ <br>
+11. Right click into the ScenePerception folder
 12. Open a new terminal.
-13. In the terminal, type "git clone -b {your_branch_name} https://github.com/AwrodHaghiTabrizi/UMARV-CV-LaneDetection.git"
+13. In the terminal, type "git clone -b {your_branch_name} https://github.com/AwrodHaghiTabrizi/UMARV-CV-ScenePerception.git"
 14. Open VSCode
 15. Click File > Open Folder
-16. Open the UMARV-CV-LaneDetection folder
-- Tip: Keep your working directory as UMARV-CV-LaneDetection when running scripts or notebooks
+16. Open the UMARV-CV-ScenePerception folder
+- Tip: Keep your working directory as UMARV-CV-ScenePerception when running scripts or notebooks
 
 ### Repository Rules
 
@@ -45,8 +45,8 @@ The src/scripts folder hosts our scripts which provide varrying functionalities 
 ## Environments
 
 This repository allows development flexability to work in multiple environments, including: Windows, Mac, Google Colab, and LambdaLabs.
-- [Working with Google Colab](https://github.com/AwrodHaghiTabrizi/UMARV-CV-LaneDetection/blob/users/AHT/docs/working_with_environments.md#google-colab)
-- [Working with LambdaLabs](https://github.com/AwrodHaghiTabrizi/UMARV-CV-LaneDetection/blob/users/AHT/docs/working_with_environments.md#lambdalabs)
+- [Working with Google Colab](https://github.com/AwrodHaghiTabrizi/UMARV-CV-ScenePerception/blob/users/AHT/docs/working_with_environments.md#google-colab)
+- [Working with LambdaLabs](https://github.com/AwrodHaghiTabrizi/UMARV-CV-ScenePerception/blob/users/AHT/docs/working_with_environments.md#lambdalabs)
 
 ## Developing Models
 
@@ -54,7 +54,7 @@ This repository allows development flexability to work in multiple environments,
 2. Right click on either "create_new_model.py" or "create_copy_of_model.py"
 3. Click "Run Python File in Termainl"
 4. Answer the prompts in the terminal
-5. Go through [Working With Models](https://github.com/AwrodHaghiTabrizi/UMARV-CV-LaneDetection/blob/users/AHT/docs/creating_models.md)
+5. Go through [Working With Models](https://github.com/AwrodHaghiTabrizi/UMARV-CV-ScenePerception/blob/users/AHT/docs/creating_models.md)
 
 ## Developing Algorithms
 
@@ -62,4 +62,4 @@ This repository allows development flexability to work in multiple environments,
 2. Right click on either "create_new_algorithm.py" or "create_copy_of_algorithm.py"
 3. Click "Run Python File in Termainl"
 4. Answer the prompts in the terminal
-5. Go through [Working With Algorithms](https://github.com/AwrodHaghiTabrizi/UMARV-CV-LaneDetection/blob/users/AHT/docs/creating_algorithms.md)
+5. Go through [Working With Algorithms](https://github.com/AwrodHaghiTabrizi/UMARV-CV-ScenePerception/blob/users/AHT/docs/creating_algorithms.md)

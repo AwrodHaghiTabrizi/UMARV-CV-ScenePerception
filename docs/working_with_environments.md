@@ -4,7 +4,7 @@
 
 Google Colab is a great environment to work out of as it has free GPU access. These GPUs are limited and run out, so try to get your code working locally first, then hop on google colab to leverage the GPUs during training.
 
-1. Go to https://github.com/AwrodHaghiTabrizi/UMARV-CV-LaneDetection
+1. Go to https://github.com/AwrodHaghiTabrizi/UMARV-CV-ScenePerception
 2. Click on the branches dropdown ("main")
 3. Select your branch
 4. Navigate to your model foder

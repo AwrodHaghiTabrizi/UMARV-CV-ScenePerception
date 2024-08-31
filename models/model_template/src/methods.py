@@ -40,7 +40,7 @@ def upload_model_weights(model, dbx_access_token, delete=True):
     except:
         print("Could not connect to Dropbox when attempting to upload weights.")
         return
-    dbx_model_weight_dir = f'/UMARV/ComputerVision/LaneDetection/model_weights/model_{os.getenv("MODEL_ID")}_weights.pth'
+    dbx_model_weight_dir = f'/UMARV/ComputerVision/ScenePerception/model_weights/model_{os.getenv("MODEL_ID")}_weights.pth'
     local_model_weights_dir = f'{os.getenv("REPO_DIR")}/models/model_{os.getenv("MODEL_ID")}/content/weights.pth'   
     torch.save(model.state_dict(), local_model_weights_dir)
     with open(local_model_weights_dir, 'rb') as file:
@@ -58,7 +58,7 @@ def download_model_weights(model, dbx_access_token, delete=True):
     except:
         print("Could not connect to Dropbox when attempting to download weights. Using default weights.")
         return model
-    dbx_model_weight_dir = f'/UMARV/ComputerVision/LaneDetection/model_weights/model_{os.getenv("MODEL_ID")}_weights.pth'
+    dbx_model_weight_dir = f'/UMARV/ComputerVision/ScenePerception/model_weights/model_{os.getenv("MODEL_ID")}_weights.pth'
     local_model_weights_dir = f'{os.getenv("REPO_DIR")}/models/model_{os.getenv("MODEL_ID")}/content/weights.pth'   
     try:
         metadata = dbx.files_get_metadata(dbx_model_weight_dir)
@@ -369,12 +369,12 @@ def upload_datasets_to_google_drive():
     from google.colab import drive
     drive.mount('/content/drive')
     source_directory = '/content/datasets/'
-    destination_directory = '/content/drive/My Drive/UMARV/LaneDetection/datasets/'
+    destination_directory = '/content/drive/My Drive/UMARV/ScenePerception/datasets/'
     shutil.copytree(source_directory, destination_directory)
 
 def get_datasets_from_google_drive():
     from google.colab import drive
     drive.mount('/content/drive')
-    source_directory = '/content/drive/My Drive/UMARV/LaneDetection/datasets/'
+    source_directory = '/content/drive/My Drive/UMARV/ScenePerception/datasets/'
     destination_directory = '/content/datasets/'
     shutil.copytree(source_directory, destination_directory)
