@@ -1,6 +1,6 @@
 # UMARV-CV-ScenePerception
 
-A research and development platform for the University of Michigan's Autonomous Robotic Vehicle (UMARV) Computer Vision team to solve the understanding of a road scene
+A research and development platform for the University of Michigan's Autonomous Robotic Vehicle (UMARV) Computer Vision team to solve the understanding of a road scene.
 
 ## Models vs Algorithms
 
@@ -8,14 +8,15 @@ The models folder hosts all of our machine learning solutions, while the algorit
 
 ## Scripts
 
-The src/scripts folder hosts our scripts which provide varrying functionalities from model/algorithm initialization, performance comparison, and dataset generation. To run them, right click on the script and select "Run Python File in Terminal".
+The `src/scripts/` folder hosts our scripts which provide varrying functionalities from model/algorithm initialization, performance comparison, and dataset generation. To run them, right click on the script and select "Run Python File in Terminal".
 
 ## How To Interact With This Repository
 
 [Video Tutorial](https://youtube.com) <!-- TODO Create video and add link -->
 
 1. Have git installed on your computer.
-    - [Git Installation Guide](https://git-scm.com/downloads)
+    - [git installation guide](https://git-scm.com/downloads)
+    - [git introduction](https://www.w3schools.com/git/git_intro.asp?remote=github)
 2. Have Python installed on your computer.
     - [Python Installation Guide](https://wiki.python.org/moin/BeginnersGuide/Download)
 3. Have these Python packages installed.
@@ -27,6 +28,7 @@ The src/scripts folder hosts our scripts which provide varrying functionalities 
     - ```pip install gitpython```
     - ```pip install dropbox```
     - ```pip install tqdm```
+    - ```pip install nbformat```
 4. Request access to the ScenePerception GitHub repository from a team lead.
     - You must accept the invitation to the GitHub repository.
 5. Setup the repository on your local machine.
@@ -41,22 +43,21 @@ The src/scripts folder hosts our scripts which provide varrying functionalities 
         - Ex: Branch name for Awrod Haghi-Tabrizi = user/AwrodHaghiTabrizi
     - ```git checkout -b {your_branch_name}```
     - ```git push -u origin {your_branch_name}```
-6. Open the project in VSCode
-    - Open VSCode
-    - Click File > Open Folder
-    - Open the 'UMARV-CV-ScenePerception' folder.
-    - Common mistake: Opening the 'UMARV' folder or the 'ScenePerception' folder.
-    - IMPORTANT: Keep your working directory as UMARV-CV-ScenePerception when running scripts and notebooks
+6. Open the project in VSCode.
+    - Open VSCode.
+    - Click File > Open Folder.
+    - Open the `UMARV-CV-ScenePerception` folder.
+        - Common mistake: Opening the `UMARV` folder or the `ScenePerception` folder.
+        - IMPORTANT: Keep your working directory as `UMARV-CV-ScenePerception` when running scripts and notebooks.
 
 ### Repository Rules
 
 - Full freedom to create/delete/edit code in your model/algorithm folder.
 - Dont change any code in:
     - model/algorithm folders that dont belong to you (you can tell by the author name in the content/info.json or just by the model id itself).
-    - src/script (unless making global updates).
+    - `src/scripts/` (unless making global updates).
     - model_template/algorithm_tempalte (unless making global updates).
 - Work in your own branch. <!-- Pull before every work session. Push after every work session. -->
-- [git tutorial](https://www.w3schools.com/git/git_intro.asp?remote=github)
 
 ## Environments
 
@@ -69,18 +70,19 @@ This repository allows development flexability to work in multiple environments,
 
 ## Developing Models
 
-1. Navigate to src/scripts
-2. Right click on either "create_new_model.py" or "create_copy_of_model.py"
-3. Click "Run Python File in Termainl"
-4. Answer the prompts in the terminal
+1. Navigate to `src/scripts`.
+2. Right click on either `create_model.py` or `create_copy_of_model.py`
+    - `create_model.py` creates a new model from the template
+    - `create_copy_of_model.py` creates a copy of a model using its model id
+3. Click "Run Python File in Termainl".
+4. Answer the prompts in the terminal.
 5. Go through [Working With Models](https://github.com/AwrodHaghiTabrizi/UMARV-CV-ScenePerception/blob/users/AHT/docs/creating_models.md)
 
-<!--
-
-Functionality coming soon. For the time being, refer to the LaneDetection repository for Algorithms support.
-https://github.com/AwrodHaghiTabrizi/UMARV-CV-LaneDetection
-
 ## Developing Algorithms
+
+Functionality coming soon. For the time being, refer to the [LaneDetection repository](https://github.com/AwrodHaghiTabrizi/UMARV-CV-LaneDetection) for Algorithms support.
+
+<!--
 
 1. Navigate to src/scripts
 2. Right click on either "create_new_algorithm.py" or "create_copy_of_algorithm.py"

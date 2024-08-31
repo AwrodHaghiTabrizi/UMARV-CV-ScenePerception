@@ -1,30 +1,14 @@
 import os
 import shutil
 import cv2
+import torch
 import torch.nn as nn
 import dropbox
-import json
-import os
-import sys
-import re
-import glob
-import copy
-import matplotlib.pyplot as plt
 from getpass import getpass
 from tqdm.notebook import tqdm
-import torch
-from torch.utils.data import Dataset, DataLoader
 from sklearn.metrics import confusion_matrix
 from sklearn.model_selection import train_test_split
-import sys
-import numpy as np
-import cv2
-import sys
-import torch
-from torch.utils.data import Dataset, DataLoader
 import torchvision.transforms as transforms
-import glob
-import random
 
 def initialize_model(model_id, lookback):
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
