@@ -1,21 +1,24 @@
 # Creating Datasets
 
+[Video tutorial](https://youtube.com) <!-- TODO Create video tutorial and update link -->
+
 1. Take a high quality video going through a course.
-2. Convert the video to .mp4 if necessary. [.MOV to .MP4 converter](https://cloudconvert.com/mov-to-mp4)
+2. Convert the video to .mp4 if necessary.
+    - [.MOV to .MP4 converter](https://cloudconvert.com/mov-to-mp4)
 3. Store the video in DrobBox ".../ML/raw_videos".
 4. Place the video in the UMARV-CV repo "/parapeters/input" directory
 5. Run the script "/src/scripts/get_frames_from_video.py"
 6. Go to [https://app.roboflow.com/umarv-cv](https://app.roboflow.com/umarv-cv)
 7. Click "+ New Project" in the top right.
-7. Fill out the project details.
+8. Fill out the project details.
     - Project Name = "SP/{dataset_name}"
     - License = "CC BY 4.0"
     - Annotation Group = "Lanes"
     - Project Type = "Show More" -> "Semantic Segmentation"
-8. Click "Create Public Project".
+9. Click "Create Public Project".
     - Don't sync annotations.
-9. Drop all the raw images into roboflow by selecting the folder and pointing to "{UMARV-CV repo}/parameters/output/{dataset_name}/data".
-10. Once the raw images are exported to roboflow, delete the contents of input and output in the repo parameter folder.
+10. Drop all the raw images into roboflow by selecting the folder and pointing to "{UMARV-CV repo}/parameters/output/{dataset_name}/data".
+11. Once the raw images are exported to roboflow, delete the contents of input and output in the repo parameter folder.
 11. Click "Save and Continue".
 13. Click "Start Manual Labeling".
 14. Add teammates if necessary, max of 3 people including yourself.
@@ -52,7 +55,7 @@
     2. Remove the preprocessing steps in section 3 and click "Continue".
     3. Leave Augmentation empty and click "Continue".
     4. Click "Create".
-    5. Click "Export Dataset"
+    5. Click "Export Dataset".
     6. Format = "Semantic Segmentation Masks".
     7. Select "download zip to computer".
     8. Click "Continue".

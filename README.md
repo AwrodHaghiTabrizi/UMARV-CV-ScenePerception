@@ -12,41 +12,60 @@ The src/scripts folder hosts our scripts which provide varrying functionalities 
 
 ## How To Interact With This Repository
 
-1. Make sure you have git installed on your computer, guide [here](https://git-scm.com/downloads)
-2. Get access to the GitHub repository from a team lead
-3. Accept the invitation to the GitHub repository
-4. Go to https://github.com/AwrodHaghiTabrizi/UMARV-CV-ScenePerception/branches
-5. Click "New Branch"
-6. Branch name : "users/{your_initials}"
-7. Source : main
-8. Click "Create Branch"
-9. On your PC, create a UMARV folder <br>
-├── UMARV/ <br>
-10. Create a Scene Perception folder <br>
-├── UMARV/ <br>
-│ ├── ScenePerception/ <br>
-11. Right click into the ScenePerception folder
-12. Open a new terminal.
-13. In the terminal, type "git clone -b {your_branch_name} https://github.com/AwrodHaghiTabrizi/UMARV-CV-ScenePerception.git"
-14. Open VSCode
-15. Click File > Open Folder
-16. Open the UMARV-CV-ScenePerception folder
-- Tip: Keep your working directory as UMARV-CV-ScenePerception when running scripts or notebooks
+[Video Tutorial](https://youtube.com) <!-- TODO Create video and add link -->
+
+1. Have git installed on your computer.
+    - [Git Installation Guide](https://git-scm.com/downloads)
+2. Have Python installed on your computer.
+    - [Python Installation Guide](https://wiki.python.org/moin/BeginnersGuide/Download)
+3. Have these Python packages installed.
+    - Open a terminal.
+    - ```pip install opencv-python```
+    - ```pip install torch```
+    - ```pip install scikit-learn```
+    - ```pip install matplotlib```
+    - ```pip install gitpython```
+    - ```pip install dropbox```
+    - ```pip install tqdm```
+4. Request access to the ScenePerception GitHub repository from a team lead.
+    - You must accept the invitation to the GitHub repository.
+5. Setup the repository on your local machine.
+    - On your Desktop, right click and select 'Open In Terminal'.
+    - ```mkdir UMARV```
+    - ```cd UMARV```
+    - ```mkdir ScenePerception```
+    - ```cd ScenePerception```
+    - ```git clone https://github.com/AwrodHaghiTabrizi/UMARV-CV-ScenePerception.git .```
+    - IMPORTANT: Replace your branch name in the end of the next 2 commands.
+        - your_branch_name = "user/{your_name_with_no_spaces}"
+        - Ex: Branch name for Awrod Haghi-Tabrizi = user/AwrodHaghiTabrizi
+    - ```git checkout -b {your_branch_name}```
+    - ```git push -u origin {your_branch_name}```
+6. Open the project in VSCode
+    - Open VSCode
+    - Click File > Open Folder
+    - Open the 'UMARV-CV-ScenePerception' folder.
+    - Common mistake: Opening the 'UMARV' folder or the 'ScenePerception' folder.
+    - IMPORTANT: Keep your working directory as UMARV-CV-ScenePerception when running scripts and notebooks
 
 ### Repository Rules
 
 - Full freedom to create/delete/edit code in your model/algorithm folder.
 - Dont change any code in:
-    - model/algorithm folders that dont belong to you
-    - src/script (unless making updates)
-    - model_template/algorithm_tempalte (unless making updates)
-- Work in your own branch. Pull before every work session. Push after every work session. [git tutorial](https://www.w3schools.com/git/git_intro.asp?remote=github)
+    - model/algorithm folders that dont belong to you (you can tell by the author name in the content/info.json or just by the model id itself).
+    - src/script (unless making global updates).
+    - model_template/algorithm_tempalte (unless making global updates).
+- Work in your own branch. <!-- Pull before every work session. Push after every work session. -->
+- [git tutorial](https://www.w3schools.com/git/git_intro.asp?remote=github)
 
 ## Environments
 
-This repository allows development flexability to work in multiple environments, including: Windows, Mac, Google Colab, and LambdaLabs.
-- [Working with Google Colab](https://github.com/AwrodHaghiTabrizi/UMARV-CV-ScenePerception/blob/users/AHT/docs/working_with_environments.md#google-colab)
-- [Working with LambdaLabs](https://github.com/AwrodHaghiTabrizi/UMARV-CV-ScenePerception/blob/users/AHT/docs/working_with_environments.md#lambdalabs)
+This repository allows development flexability to work in multiple environments, including:
+    - Windows
+    - Mac
+    - Google Colab - [Working with Google Colab](https://github.com/AwrodHaghiTabrizi/UMARV-CV-ScenePerception/blob/users/AHT/docs/working_with_environments.md#google-colab)
+    - LambdaLabs - [Working with LambdaLabs](https://github.com/AwrodHaghiTabrizi/UMARV-CV-ScenePerception/blob/users/AHT/docs/working_with_environments.md#lambdalabs)
+    - Jetson (coming soon)
 
 ## Developing Models
 
@@ -56,6 +75,11 @@ This repository allows development flexability to work in multiple environments,
 4. Answer the prompts in the terminal
 5. Go through [Working With Models](https://github.com/AwrodHaghiTabrizi/UMARV-CV-ScenePerception/blob/users/AHT/docs/creating_models.md)
 
+<!--
+
+Functionality coming soon. For the time being, refer to the LaneDetection repository for Algorithms support.
+https://github.com/AwrodHaghiTabrizi/UMARV-CV-LaneDetection
+
 ## Developing Algorithms
 
 1. Navigate to src/scripts
@@ -63,3 +87,5 @@ This repository allows development flexability to work in multiple environments,
 3. Click "Run Python File in Termainl"
 4. Answer the prompts in the terminal
 5. Go through [Working With Algorithms](https://github.com/AwrodHaghiTabrizi/UMARV-CV-ScenePerception/blob/users/AHT/docs/creating_algorithms.md)
+
+-->

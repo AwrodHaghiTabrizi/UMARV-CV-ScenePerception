@@ -200,9 +200,10 @@ def validate_model(model, dataloader, num_classes=4):
         metrics = get_performance_metrics(conf_matrix, num_classes)
         return metrics
 
-def training_loop(model, criterion, optimizer, train_dataloader, val_dataloader, dbx_access_token, num_epochs=50,
-                  critiqueing_metric="Accuracy", auto_stop=False, auto_stop_patience=10,
-                  verbose=True, log_every_n_epochs=5, log_no_improvement_every_n_epochs=10):
+def training_loop(model, criterion, optimizer, train_dataloader, val_dataloader, val_dataset, dbx_access_token, 
+                  num_epochs=50, critiqueing_metric="Accuracy", auto_stop=False, auto_stop_patience=10,
+                  verbose=True, log_every_n_epochs=5, log_no_improvement_every_n_epochs=10,
+                  show_sample_results=False, num_sample_results=2, show_sample_results_every_n_epochs=10):
 
     train_loss_hist = []
     val_performance_hist = []
@@ -224,6 +225,9 @@ def training_loop(model, criterion, optimizer, train_dataloader, val_dataloader,
         if epochs_since_best_val_performance > 0 and epochs_since_best_val_performance % log_no_improvement_every_n_epochs == 0 and verbose:
             print(f"[EPOCH {epoch}/{num_epochs}]  No improvement in validation {critiqueing_metric} for {epochs_since_best_val_performance} epochs")
         
+        if show_sample_results and epoch % show_sample_results_every_n_epochs == 0:
+            show_sample_results(model, val_dataset, device, num_samples=num_sample_results)
+
         if auto_stop and epochs_since_best_val_performance >= auto_stop_patience:
             print(f"Training auto stopped. No improvement in validation accuracy for {auto_stop_patience} epochs.")
             break

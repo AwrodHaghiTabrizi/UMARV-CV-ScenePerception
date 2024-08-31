@@ -12,7 +12,6 @@ import os
 
 class Dataset_Class(Dataset):
 
-  # def __init__(self, device, split, datasets, transform, data_augmentation, data_augmentation_weight):
   def __init__(self, data, lookback, augment=False, device="cpu", label_input_threshold=.1):
     
     self.data = data

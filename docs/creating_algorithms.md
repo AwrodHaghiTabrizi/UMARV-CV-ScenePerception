@@ -1,5 +1,11 @@
 # Working With Algorithms
 
+Coming soon.
+
+For the time being, refer to the [LaneDetection repository](https://github.com/AwrodHaghiTabrizi/UMARV-CV-LaneDetection) for Algorithms support.
+
+<!--
+
 ## Creating Algorithms
 
 1. Navigate to src/scripts
@@ -8,3 +14,5 @@
 4. Answer the prompts in the terminal
 
 ## Developing Algorithms
+
+-->
