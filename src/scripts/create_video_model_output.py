@@ -29,7 +29,7 @@ import random
 def initialize_model(model_id, lookback):
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     model = lane_model(lookback=lookback).to(device)
-    dbx_access_token = "sl.B6xwkCVxlS-xjNNQwmnoqbCq3JSNDEYWihgxR2Q_bWeUBB95DXv_sPEEM1eHxsFnZ88ZVtu9p6Ivpy_wT7nXXdMT-_nl1R_T2VqgvBByDOKRwi7h43ZT-EHrYaxmhAMziLpBu2q_UQC6"
+    dbx_access_token = ""
     dbx = dropbox.Dropbox(dbx_access_token)
     dbx_model_weight_dir = f'/UMARV/ComputerVision/ScenePerception/model_weights/model_{model_id}_weights.pth'
     local_model_weights_dir = f'{os.getcwd()}/parameters/output/weights.pth'
