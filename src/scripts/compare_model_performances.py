@@ -1,12 +1,6 @@
 import os
-import shutil
-from datetime import datetime
-import logging
 import sys
 import json
-import nbformat
-from operator import itemgetter
-from collections import defaultdict
 
 repo_dir = os.getcwd()
 
