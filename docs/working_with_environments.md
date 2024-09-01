@@ -19,7 +19,7 @@ Pre-requisite: Have a model already created and pushed to the branch. Tutorial h
 10. Click on the correct `.ipynb` file for your model (usually the first result).
 11. If stuck on an empty page, try refreshing the page.
 
-If you wan't to utilize the GPU, navigate to: Notebook Runtime > View Resources > Change Runtime Type and select GPU.
+If you wan't to utilize the GPU, navigate to: Runtime > View Resources > Change Runtime Type and select GPU.
 
 ## LambdaLabs
 

@@ -57,7 +57,7 @@ The `src/scripts/` folder hosts our scripts which provide varrying functionaliti
     - model/algorithm folders that dont belong to you (you can tell by the author name in the content/info.json or just by the model id itself).
     - `src/scripts/` (unless making global updates).
     - model_template/algorithm_tempalte (unless making global updates).
-- Work in your own branch. <!-- Pull before every work session. Push after every work session. -->
+- Work in your own branch. Pull before every work session. Push after every work session.
 
 ## Environments
 

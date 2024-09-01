@@ -28,7 +28,7 @@ def set_device():
     else:
         print("Could not find GPU! Using CPU only.")
         if os.getenv('ENVIRONMENT') == "colab":
-            print("If you want to enable GPU, go to Notebook Runtime > View Resources > Change Runtime Type and select GPU.")
+            print("If you want to enable GPU, go to Runtime > View Resources > Change Runtime Type and select GPU.")
     return device
 
 def upload_model_weights(model, dbx_access_token, delete=True):
