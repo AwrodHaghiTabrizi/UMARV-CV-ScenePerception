@@ -78,10 +78,7 @@ def copy_directory_from_dropbox(source_dir, destination_dir, dbx=None, dbx_acces
         for item in tqdm(entries, total=total_items, desc=f"Downloading {source_dir} :", unit=" image"):
             download_and_save(item)
 
-def download_datasets_from_dropbox(
-    dbx=None, dbx_access_token = None, use_thread = False, datasets = None,
-    include_all_datasets = False, include_unity_datasets = False,
-    include_real_world_datasets = False, include_benchmarks = False ):
+def download_datasets_from_dropbox(dbx=None, dbx_access_token=None, use_thread=False, datasets=None, include_all_datasets=True):
 
     if dbx is None:
         if dbx_access_token is None:
@@ -92,18 +89,10 @@ def download_datasets_from_dropbox(
 
     if datasets is not None:
         dataset_dirs = datasets
-
-    elif not (include_all_datasets or include_unity_datasets or include_real_world_datasets or include_benchmarks):
-        dataset_dirs = ["sample/sample_dataset"]
             
     else:
         dataset_dirs = []
-        for dataset_category in ["unity", "real_world", "benchmarks"]:
-            # Check to skip the category if not requested
-            if not include_all_datasets and (
-                (dataset_category == "unity" and not include_unity_datasets) or
-                (dataset_category == "real_world" and not include_real_world_datasets)):
-                continue
+        for dataset_category in ["real_world", "benchmarks"]:
             # Collect dataset image directories from DropBox
             dataset_category_dir = f"{dbx_datasets_dir}/{dataset_category}"
             result = dbx.files_list_folder(dataset_category_dir)
