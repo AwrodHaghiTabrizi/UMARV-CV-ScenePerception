@@ -16,7 +16,7 @@ In the `src/` folder, we organize the code into multiple .py files, each serving
 - `dataset.py`
     - Handles the dataset and data augmentation definitions.
 
-To run the code and execute these methods, we work from Jupyter notebooks located in the `src/notebooks/` folder. Each notebook is tailored for a specific environment, such as Windows, macOS, Google Colab, and more. This allows you to choose the environment that best suits your needs while leveraging the methods defined in `methods.py`.
+To run the code and execute these methods, we work from Jupyter notebooks located in the `src/notebooks/` folder. Each notebook is tailored for a specific environment, such as Windows, macOS, Google Colab, and more. This allows you to choose the environment that best suits your needs while leveraging the methods defined in `methods.py`. A tutorial on [how to work with cloud environments](https://github.com/AwrodHaghiTabrizi/UMARV-CV-ScenePerception/blob/main/docs/working_with_environments.md).
 
 For example, while `methods.py` includes the methods to train a model, the actual training process is initiated and managed from a Jupyter notebook specific to your environment in the `src/notebooks/` folder. This setup keeps our code organized and makes it easier to experiment and iterate across different platforms.
 

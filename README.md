@@ -19,8 +19,28 @@ The `src/scripts/` folder hosts our scripts which provide varrying functionaliti
     - [git introduction](https://www.w3schools.com/git/git_intro.asp?remote=github)
 2. Have Python installed on your computer.
     - [Python Installation Guide](https://wiki.python.org/moin/BeginnersGuide/Download)
-3. Have these Python packages installed.
-    - Open a terminal.
+3. Request access to the ScenePerception GitHub repository from a team lead.
+    - You must accept the invitation to the GitHub repository.
+4. Setup the repository on your local machine.
+    - On your Desktop, right click and select 'Open In Terminal'.
+    - ```mkdir UMARV```
+    - ```cd UMARV```
+    - ```mkdir ScenePerception```
+    - ```cd ScenePerception```
+    - ```git clone https://github.com/AwrodHaghiTabrizi/UMARV-CV-ScenePerception.git .```
+    - ```cd UMARV-CV-ScenePerception```
+    - IMPORTANT: Replace your branch name in the end of the next 2 commands.
+        - your_branch_name = "user/{your_name_with_no_spaces}"
+        - Ex: Branch name for Awrod Haghi-Tabrizi = user/AwrodHaghiTabrizi
+    - ```git checkout -b {your_branch_name}```
+    - ```git push -u origin {your_branch_name}```
+5. Open the project in VSCode.
+    - Open VSCode.
+    - Click File > Open Folder.
+    - Open the `UMARV-CV-ScenePerception` folder.
+        - Common mistake: Opening the `UMARV` folder or the `ScenePerception` folder.
+        - IMPORTANT: Keep your working directory as `UMARV-CV-ScenePerception` when running scripts and notebooks.
+6. Before starting development, install the following [Python libraries](https://github.com/AwrodHaghiTabrizi/UMARV-CV-ScenePerception/blob/main/docs/requirements.md) on your machine / virtual environment.
     - ```pip install opencv-python```
     - ```pip install torch```
     - ```pip install scikit-learn```
@@ -29,26 +49,6 @@ The `src/scripts/` folder hosts our scripts which provide varrying functionaliti
     - ```pip install dropbox```
     - ```pip install tqdm```
     - ```pip install nbformat```
-4. Request access to the ScenePerception GitHub repository from a team lead.
-    - You must accept the invitation to the GitHub repository.
-5. Setup the repository on your local machine.
-    - On your Desktop, right click and select 'Open In Terminal'.
-    - ```mkdir UMARV```
-    - ```cd UMARV```
-    - ```mkdir ScenePerception```
-    - ```cd ScenePerception```
-    - ```git clone https://github.com/AwrodHaghiTabrizi/UMARV-CV-ScenePerception.git .```
-    - IMPORTANT: Replace your branch name in the end of the next 2 commands.
-        - your_branch_name = "user/{your_name_with_no_spaces}"
-        - Ex: Branch name for Awrod Haghi-Tabrizi = user/AwrodHaghiTabrizi
-    - ```git checkout -b {your_branch_name}```
-    - ```git push -u origin {your_branch_name}```
-6. Open the project in VSCode.
-    - Open VSCode.
-    - Click File > Open Folder.
-    - Open the `UMARV-CV-ScenePerception` folder.
-        - Common mistake: Opening the `UMARV` folder or the `ScenePerception` folder.
-        - IMPORTANT: Keep your working directory as `UMARV-CV-ScenePerception` when running scripts and notebooks.
 
 ### Repository Rules
 

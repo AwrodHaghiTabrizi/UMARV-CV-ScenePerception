@@ -55,7 +55,7 @@
     2. Remove the preprocessing steps in section 3 and click "Continue".
     3. Leave Augmentation empty and click "Continue".
     4. Click "Create".
-    5. Click "Export Dataset".
+    5. Click "Download Dataset".
     6. Format = "Semantic Segmentation Masks".
     7. Select "download zip to computer".
     8. Click "Continue".

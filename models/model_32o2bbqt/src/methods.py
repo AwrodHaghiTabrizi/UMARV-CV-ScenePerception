@@ -208,7 +208,7 @@ def training_loop(model, criterion, optimizer, train_dataloader, val_dataloader,
                   num_epochs=50, critiqueing_metric="Accuracy", upload_weights_to_dropbox=True,
                   auto_stop=False, auto_stop_patience=10,
                   verbose=True, log_every_n_epochs=5, log_no_improvement_every_n_epochs=10,
-                  display_sample_results=False, num_sample_results=2, display_sample_results_every_n_epochs=10):
+                  display_sample_results=False, num_sample_results=2, display_sample_results_every_n_epochs=20):
 
     train_loss_hist = []
     val_performance_hist = []

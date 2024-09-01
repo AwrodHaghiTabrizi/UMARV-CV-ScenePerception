@@ -19,14 +19,17 @@ sys.path.insert(0, f"{os.getenv('MODEL_DIR')}/src")
 from dataset import *
 from architecture import *
 
-def set_device():
+def set_device(verbose=True):
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     if torch.cuda.is_available():
-        print("Using GPU!")
+        if verbose:
+            print("Using GPU!")
     else:
-        print("Could not find GPU! Using CPU only.")
+        if verbose:
+            print("Could not find GPU! Using CPU only.")
         if os.getenv('ENVIRONMENT') == "colab":
-            print("If you want to enable GPU, go to Edit > Notebook Settings > Hardware Accelerator and select GPU.")
+            if verbose:
+                print("If you want to enable GPU, go to Edit > Notebook Settings > Hardware Accelerator and select GPU.")
     return device
 
 def upload_model_weights(model, dbx_access_token, delete=True):
@@ -36,7 +39,7 @@ def upload_model_weights(model, dbx_access_token, delete=True):
     try:
         dbx = dropbox.Dropbox(dbx_access_token)
     except:
-        print("Could not connect to Dropbox when attempting to upload weights.")
+        print("Could not connect to Dropbox when attempting to upload model weights.")
         return
     dbx_model_weight_dir = f'/UMARV/ComputerVision/ScenePerception/model_weights/model_{os.getenv("MODEL_ID")}_weights.pth'
     local_model_weights_dir = f'{os.getenv("REPO_DIR")}/models/model_{os.getenv("MODEL_ID")}/content/weights.pth'   
@@ -201,13 +204,21 @@ def validate_model(model, dataloader, num_classes=4):
         return metrics
 
 def training_loop(model, criterion, optimizer, train_dataloader, val_dataloader, val_dataset, dbx_access_token, 
-                  num_epochs=50, critiqueing_metric="Accuracy", auto_stop=False, auto_stop_patience=10,
+                  num_epochs=50, critiqueing_metric="Accuracy", 
+                  auto_stop=False, auto_stop_patience=10,
+                  upload_weights_to_dropbox = True,
                   verbose=True, log_every_n_epochs=5, log_no_improvement_every_n_epochs=10,
-                  show_sample_results=False, num_sample_results=2, show_sample_results_every_n_epochs=10):
+                  display_sample_results=False, num_sample_results=2, display_sample_results_every_n_epochs=10):
 
     train_loss_hist = []
     val_performance_hist = []
     epochs_since_best_val_performance = 0
+
+    if display_sample_results:
+        print("Initial sample results:")
+        show_sample_results(model, val_dataset, set_device(verbose=False), num_samples=num_sample_results)
+
+    print("Starting training...")
 
     for epoch in tqdm(range(1, num_epochs+1), desc='Training', unit='epoch'):
         train_loss = train_model(model, criterion, optimizer, train_dataloader)
@@ -225,8 +236,8 @@ def training_loop(model, criterion, optimizer, train_dataloader, val_dataloader,
         if epochs_since_best_val_performance > 0 and epochs_since_best_val_performance % log_no_improvement_every_n_epochs == 0 and verbose:
             print(f"[EPOCH {epoch}/{num_epochs}]  No improvement in validation {critiqueing_metric} for {epochs_since_best_val_performance} epochs")
         
-        if show_sample_results and epoch % show_sample_results_every_n_epochs == 0:
-            show_sample_results(model, val_dataset, device, num_samples=num_sample_results)
+        if display_sample_results and epoch % display_sample_results_every_n_epochs == 0:
+            show_sample_results(model, val_dataset, set_device(verbose=False), num_samples=num_sample_results)
 
         if auto_stop and epochs_since_best_val_performance >= auto_stop_patience:
             print(f"Training auto stopped. No improvement in validation accuracy for {auto_stop_patience} epochs.")
@@ -237,12 +248,19 @@ def training_loop(model, criterion, optimizer, train_dataloader, val_dataloader,
 
     print(f"\nTraining done!\n{epoch} epochs completed")
     print(f"Final Model Metrics:  Train Loss: {train_loss:.4f}  <>  Val Accuracy: {100*val_performance['Accuracy']:.2f}%  <>  Val Mean IoU: {100*val_performance['Mean IoU']:.2f}%\n")
+    if display_sample_results:
+            print("\nInitial sample results:")
+            show_sample_results(model, val_dataset, set_device(verbose=False), num_samples=num_sample_results)
 
     model.load_state_dict(best_model_state_dict)
-    try:
-        upload_model_weights(model, dbx_access_token)
-    except Exception as e:
-        print(f"Could not upload model weights to Dropbox - {e}")
+
+    if not upload_weights_to_dropbox:
+        print("Skipping uploading model weights to dropbox.\nIf you wish to upload them later, run 'upload_model_weights(model, dbx_access_token)'.")
+    else:
+        try:
+            upload_model_weights(model, dbx_access_token)
+        except Exception as e:
+            print(f"Could not upload model weights to Dropbox - {e}")
 
     return model, train_loss_hist, val_performance_hist, best_val_performance
 
@@ -400,6 +418,8 @@ def show_sample_results(model, dataset, device, num_samples=4, occupancy_zoom_ou
         occupancy_grid = cv2.resize(occupancy_grid, (new_width, new_height), interpolation=cv2.INTER_LINEAR)
         axs[i, 3].imshow(occupancy_grid)
         axs[i, 3].set_title("Model Output\nOccupancy Grid")
+    
+    plt.show()
 
 def upload_datasets_to_google_drive():
     from google.colab import drive
