@@ -22,7 +22,7 @@ The `src/scripts/` folder hosts our scripts which provide varrying functionaliti
 3. Request access to the ScenePerception GitHub repository from a team lead.
     - You must accept the invitation to the GitHub repository.
 4. Setup the repository on your local machine.
-    - On your Desktop, right click and select 'Open In Terminal'.
+    - On your Desktop or a folder where you want your UMARV folder to be stored, right click and select 'Open In Terminal'.
     - ```mkdir UMARV```
     - ```cd UMARV```
     - ```mkdir ScenePerception```
